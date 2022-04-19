@@ -1,15 +1,49 @@
-import React from 'react'
+import React, {useState} from 'react'
+
 
 export default function Login() {
+
+  const [nameInput, setNameInput] = useState('')
+  const [passwordInput, setPasswordInput] = useState('')
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true)
+
+  const validateFields = () => {
+    if( nameInput.length > 3 && passwordInput.length > 5 ){
+      setIsButtonDisabled(false)
+    }
+  }
+
+  const handleInputChange = ({target: {name, value}}) => {
+    name=== 'name-input' ? setNameInput(value) : setPasswordInput(value)
+    validateFields()
+  }
+
   return (
     <div>
     <div class="mb-3">
-      <label for='name-input' class="form-label">Name</label>
-      <input id='name-input' type="email" class="form-control" placeholder="name@example.com" />
+      <label htmlFor='name-input' class="form-label">Name</label>
+      <input id='name-input'
+      name='name-input'
+      value={nameInput}
+      type="text"
+      class="form-control"
+      placeholder="Michael Scott"
+      onChange={handleInputChange} />
     </div>
     <div class="mb-3">
-      <label for='password-input' class="visually-hidden">Password</label>
-      <input type="password" class="form-control" id='password-input' placeholder="Password" />
+      <label htmlFor='password-input' >Password</label>
+      <input type="password"
+      name='password-input'
+      value={passwordInput} 
+      class="form-control"
+      id='password-input'
+      placeholder="Password"
+      onChange={handleInputChange} />
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary"
+      type="submit"
+      disabled={isButtonDisabled}>Sign In</button>
     </div>
   </div>
     )
