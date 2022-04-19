@@ -1,9 +1,10 @@
 import React from 'react'
+import Header from '../components/Header'
 
 export default function Search() {
   return (
     <div>
-      {console.log('entrou no search')}
+      <Header />
       <h1>Search</h1>
     </div>
   )
