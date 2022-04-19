@@ -13,9 +13,9 @@ function App() {
         <Route exact path={'/favorites/'} component={Favorites} />
         <Route exact path={"/search"} component={Search}/>
         <Route exact path={'/profile'} component={Profile}/>
-        <Route exact path={'*'} component={NotFound}/>
-        <Route exact path={'/profile/edit'} />
         <Route exact path={'/album'} component={Album}/>
+        <Route exact path={'/profile/edit'} />
+        <Route exact path={'*'} component={NotFound}/>
       </Switch>
   );
 }

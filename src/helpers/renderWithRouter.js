@@ -4,14 +4,13 @@ import { render } from "@testing-library/react"
 import React from 'react'
 
 const renderWithRouter = (component) =>  {
-  const history = createMemoryHistory()
+  const history = createMemoryHistory();
   return ({
     ...render(
-      <Router history={ history }>
-          {component}
-      </Router>, history,
-    )
-  })
-}
+    <Router history={ history }>
+        {component}
+    </Router>), history
+  });
+};
 
-export default renderWithRouter
+export default renderWithRouter;
