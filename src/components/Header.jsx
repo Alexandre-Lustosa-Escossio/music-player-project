@@ -12,8 +12,10 @@ export default function Header() {
     
 
     return (
-        <header>
-            Hello {userName}
-        </header>
+        <nav className="navbar navbar-dark bg-dark">
+            <span className='navbar-text'>
+                Hello {userName}
+            </span>
+        </nav>
     )
 }
