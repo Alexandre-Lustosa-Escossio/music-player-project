@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom'
+import { saveOnLocalStorage } from '../utils/localStorageHandler'
 
 export default function Login() {
 
@@ -17,6 +18,11 @@ export default function Login() {
   const handleInputChange = ({target: {name, value}}) => {
     name=== 'name-input' ? setNameInput(value) : setPasswordInput(value)
     validateFields()
+  }
+
+  const onSigninBtnClick = () => {
+    saveOnLocalStorage('userLoginData' ,{name: nameInput, password: passwordInput})
+    history.push('/search')
   }
 
   return (
@@ -45,7 +51,7 @@ export default function Login() {
       <button class="btn btn-primary"
       type="submit"
       disabled={isButtonDisabled}
-      onClick={() => history.push('/search')}>Sign In</button>
+      onClick={() => onSigninBtnClick()}>Sign In</button>
     </div>
   </div>
     )
