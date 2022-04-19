@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
-
+import { useHistory } from 'react-router-dom'
 
 export default function Login() {
 
   const [nameInput, setNameInput] = useState('')
   const [passwordInput, setPasswordInput] = useState('')
   const [isButtonDisabled, setIsButtonDisabled] = useState(true)
+  const history = useHistory()
 
   const validateFields = () => {
     if( nameInput.length > 3 && passwordInput.length > 5 ){
@@ -43,7 +44,8 @@ export default function Login() {
     <div class="col-12">
       <button class="btn btn-primary"
       type="submit"
-      disabled={isButtonDisabled}>Sign In</button>
+      disabled={isButtonDisabled}
+      onClick={() => history.push('/search')}>Sign In</button>
     </div>
   </div>
     )
