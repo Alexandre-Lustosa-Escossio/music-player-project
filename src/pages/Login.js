@@ -27,28 +27,28 @@ export default function Login() {
 
   return (
     <div>
-    <div class="mb-3">
-      <label htmlFor='name-input' class="form-label">Name</label>
+    <div className="mb-3">
+      <label htmlFor='name-input' className="form-label">Name</label>
       <input id='name-input'
       name='name-input'
       value={nameInput}
       type="text"
-      class="form-control"
+      className="form-control"
       placeholder="Michael Scott"
       onChange={handleInputChange} />
     </div>
-    <div class="mb-3">
+    <div className="mb-3">
       <label htmlFor='password-input' >Password</label>
       <input type="password"
       name='password-input'
       value={passwordInput} 
-      class="form-control"
+      className="form-control"
       id='password-input'
       placeholder="Password"
       onChange={handleInputChange} />
     </div>
-    <div class="col-12">
-      <button class="btn btn-primary"
+    <div className="col-12">
+      <button className="btn btn-primary"
       type="submit"
       disabled={isButtonDisabled}
       onClick={() => onSigninBtnClick()}>Sign In</button>
