@@ -23,6 +23,29 @@ export default function SearchBar() {
         setIsLoading(false)
     }
 
+    const renderSearchResults = () => {
+        return(
+            searchResults.length > 0 ?
+            searchResults.map((album,index) => 
+            (
+                <div className="card"
+                style={{"width": "18rem"}}
+                key={index} >
+                    <img src={album.artworkUrl100} className="card-img-top" alt="..." />
+                    <div className="card-body">
+                        <h5 className="card-title">{album.collectionName}</h5>
+                        <p className="card-text">{album.artistName}</p>
+                        <p className="card-text">{album.releaseDate}</p>
+                    </div>
+                </div>
+            ))
+            :
+            <h1> No album found </h1>
+        )
+
+    }
+
+
     return (
         <div>
             <form className="d-flex">
@@ -37,18 +60,7 @@ export default function SearchBar() {
                 disabled={isBtnDisabled}
                 onClick={() => handleSearchBtnClick()}>Search</button>
             </form>
-            {isLoading? <h1>Loading...</h1> : searchResults.map((album,index) => (
-            <div className="card"
-            style={{"width": "18rem"}}
-            key={index} >
-                <img src={album.artworkUrl100} className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">{album.collectionName}</h5>
-                    <p className="card-text">{album.artistName}</p>
-                    <p className="card-text">{album.releaseDate}</p>
-                    <a href="/search" className="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>))}
+            {isLoading? <h1>Loading...</h1> : renderSearchResults()}
         </div>
     )
 }
