@@ -1,8 +1,8 @@
 export const getAlbumsFromArtist = (artistName) => {
-    const URL = `https://itunes.apple.com/search?entity=album&term=${artistName}&attribute=allArtistTerm`
+    const URL = `https://itunes.apple.com/search?entity=album&term=${artistName}`
     return(
         fetch(URL)
         .then(res => res.json())
-        .then(json => console.log(json))
+        .then(json => json)
         )
 }
