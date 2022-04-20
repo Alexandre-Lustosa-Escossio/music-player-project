@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { getAlbumsFromArtist } from '../utils/searchAlbumsApi'
 
 export default function SearchBar() {
 
@@ -15,7 +16,7 @@ export default function SearchBar() {
     }  
 
     const handleSearchBtnClick = () => {
-        searchAlbumsApi(artistName)
+        getAlbumsFromArtist(artistName)
     }
 
     return (
