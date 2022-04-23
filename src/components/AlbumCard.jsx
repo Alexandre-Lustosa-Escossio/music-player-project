@@ -1,10 +1,12 @@
-import history from 'history'
+import { useHistory } from 'react-router-dom'
 import React from 'react'
 
 export default function Card({ album }) {
 
+  const history = useHistory()
+
   const handleAlbumCardClick = async () => {
-    history.push(`/album/${album.id}`)
+    history.push(`/album/${album.collectionId}`)
   }
 
   return (
