@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { BsHeart, BsHeartFill } from 'react-icons/bs'
+import AppContext from '../context/AppContext'
 import { getFromLocalStorage, saveOnLocalStorage } from '../utils/localStorageHandler'
 
 export default function FavoriteButton({ song }) {
     
     const [isFavorite, setIsFavorite] = useState(false)
-
+    const { setFavoriteSongs } = useContext(AppContext)
 
     useEffect(() => {
         const favoriteSongs = getFromLocalStorage('favoriteSongs')
@@ -15,7 +16,11 @@ export default function FavoriteButton({ song }) {
         }
     }, [])
     
-
+    useEffect(() => {
+        const favoriteSongs = getFromLocalStorage('favoriteSongs')
+        setFavoriteSongs(favoriteSongs)
+    }, [isFavorite, setFavoriteSongs])
+    
     const checkIfLocalStorageExists = () => {
         const favoriteSongs = getFromLocalStorage('favoriteSongs')
         return (

@@ -1,22 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import Header from '../components/Header'
 import SongCard from '../components/SongCard'
-import { getFromLocalStorage } from '../utils/localStorageHandler'
+import AppContext from '../context/AppContext'
 
 export default function Favorites() {
 
-  const [favoriteSongs, setFavoriteSongs] = useState([])
-
-  useEffect(() => {
-    const localStorageFavoriteSongs = getFromLocalStorage('favoriteSongs')
-    setFavoriteSongs(localStorageFavoriteSongs)
-  }, [])
-  
+  const {favoriteSongs} = useContext(AppContext)
 
   return (
     <div>
       <Header />
-      {favoriteSongs.map(song => <SongCard song={song} />)}
+      {favoriteSongs.map((song,index) => <SongCard key={index} song={song} />)}
     </div>
   )
 }
