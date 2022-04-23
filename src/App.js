@@ -5,6 +5,7 @@ import Search from './pages/Search'
 import NotFound from './pages/NotFound'
 import Profile from './pages/Profile'
 import Album from './pages/Album'
+import AlbumDetails from './pages/AlbumDetails'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path={"/search"} component={Search}/>
         <Route exact path={'/profile'} component={Profile}/>
         <Route exact path={'/album'} component={Album}/>
+        <Route exact path={'/album/:id'} component={AlbumDetails}/>
         <Route exact path={'/profile/edit'} />
         <Route exact path={'*'} component={NotFound}/>
       </Switch>
