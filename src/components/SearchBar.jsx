@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getAlbumsFromArtist } from '../utils/apiHander'
-import Card from './Card'
+import AlbumCard from './AlbumCard'
 
 export default function SearchBar() {
 
@@ -27,7 +27,7 @@ export default function SearchBar() {
     const renderSearchResults = () => {
         return(
             searchResults.length > 0 ?
-            searchResults.map((album,index) =>(<Card album={album} key={index} />))
+            searchResults.map((album,index) =>(<AlbumCard album={album} key={index} />))
             :
             <h1> No album found </h1>
         )
