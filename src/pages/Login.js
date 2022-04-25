@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom'
 import { saveOnLocalStorage } from '../utils/localStorageHandler'
+import '../style/Login.css'
 
 export default function Login() {
 
@@ -26,33 +27,40 @@ export default function Login() {
   }
 
   return (
-    <div>
-    <div className="mb-3">
-      <label htmlFor='name-input' className="form-label">Name</label>
-      <input id='name-input'
-      name='name-input'
-      value={nameInput}
-      type="text"
-      className="form-control"
-      placeholder="Michael Scott"
-      onChange={handleInputChange} />
-    </div>
-    <div className="mb-3">
-      <label htmlFor='password-input' >Password</label>
-      <input type="password"
-      name='password-input'
-      value={passwordInput} 
-      className="form-control"
-      id='password-input'
-      placeholder="Password"
-      onChange={handleInputChange} />
-    </div>
-    <div className="col-12">
-      <button className="btn btn-primary"
-      type="submit"
-      disabled={isButtonDisabled}
-      onClick={() => onSigninBtnClick()}>Sign In</button>
-    </div>
-  </div>
+    <main>
+      <div id='main'>
+        <h1 id='heading'>Login</h1>
+        <hr/>
+        <div id='form-container'>
+          <div className="mb-3">
+            <label htmlFor='name-input' className="form-label">Name</label>
+            <input id='name-input'
+            name='name-input'
+            value={nameInput}
+            type="text"
+            className="form-control"
+            placeholder="Michael Scott"
+            onChange={handleInputChange} />
+          </div>
+          <div className="mb-3">
+            <label htmlFor='password-input' >Password</label>
+            <input type="password"
+            name='password-input'
+            value={passwordInput} 
+            className="form-control"
+            id='password-input'
+            placeholder="Password"
+            onChange={handleInputChange} />
+          </div>
+          <div id='btn-container' className="col-12">
+            <button id='button' 
+            className="btn btn-primary"
+            type="submit"
+            disabled={isButtonDisabled}
+            onClick={() => onSigninBtnClick()}>Sign In</button>
+          </div>
+        </div>
+      </div>
+  </main>
     )
 }
