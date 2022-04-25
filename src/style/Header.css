@@ -1,0 +1,23 @@
+nav{
+    height: 5vh;
+}
+
+#navbarSupportedContent{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile-link{
+    margin-right: auto;
+}
+
+#favorites-link{
+    margin-right: 5px;
+}
+
+span{
+    color: red;
+    margin-right: auto;
+}
