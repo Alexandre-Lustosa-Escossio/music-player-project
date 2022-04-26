@@ -1,0 +1,13 @@
+#song-card{
+    display: flex;
+    margin: 5px;
+}
+
+#span-div{
+    max-width: 80%;
+    padding-left: 10px;
+}
+
+#span{
+    color: white;
+}
