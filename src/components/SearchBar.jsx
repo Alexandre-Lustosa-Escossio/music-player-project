@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { getAlbumsFromArtist } from '../utils/apiHander'
 import AlbumCard from './AlbumCard'
+import '../style/SearchBar.css'
+
 
 export default function SearchBar() {
 
@@ -36,7 +38,7 @@ export default function SearchBar() {
 
 
     return (
-        <div>
+        <div id='form-container'>
             <form className="d-flex">
                 <input className="form-control me-2"
                 type="search"
