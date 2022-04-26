@@ -10,6 +10,7 @@ export default function SearchBar() {
     const [isBtnDisabled, setIsBtnDisabled] = useState(true)
     const [searchResults, setSearchResults] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    const [activeSearch, setActiveSearch] = useState(false)
 
     useEffect(() => {
         artistName.length > 2? setIsBtnDisabled(false): setIsBtnDisabled(true)
@@ -21,17 +22,23 @@ export default function SearchBar() {
 
     const handleSearchBtnClick = async () => {
         setIsLoading(true)
+        setActiveSearch(true)
         const { results } = await getAlbumsFromArtist(artistName)
         setSearchResults(results)
         setIsLoading(false)
     }
 
     const renderSearchResults = () => {
+        if (activeSearch) {
+            return(
+                searchResults.length > 0 ?
+                    searchResults.map((album,index) =>(<AlbumCard album={album} key={index} />))
+                    :
+                    <h1> No album found </h1>
+                )
+            }
         return(
-            searchResults.length > 0 ?
-            searchResults.map((album,index) =>(<AlbumCard album={album} key={index} />))
-            :
-            <h1> No album found </h1>
+            <div></div>
         )
 
     }
@@ -46,7 +53,7 @@ export default function SearchBar() {
                 aria-label="Search"
                 value={artistName}
                 onChange={(e) => handleInputChange(e)} />
-                <button className="btn btn-outline-success"
+                <button className="btn btn-dark"
                 type="button"
                 disabled={isBtnDisabled}
                 onClick={() => handleSearchBtnClick()}>Search</button>
