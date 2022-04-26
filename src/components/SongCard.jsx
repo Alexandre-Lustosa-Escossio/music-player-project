@@ -6,7 +6,7 @@ export default function SongCard({ song }) {
     const {trackName, previewUrl}  = song
     
     return (
-        <div>
+        <div id='song-card'>
             <div>
                 <span>{trackName}</span>
             </div>
