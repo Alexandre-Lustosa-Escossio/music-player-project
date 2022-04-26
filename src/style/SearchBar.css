@@ -8,6 +8,14 @@
     margin-top: 50px;
 }
 
+.carousel-indicators{
+    bottom: -50px;
+}
+
 .card-body{
     color: black;
+}
+
+.card{
+    margin: auto;
 }
