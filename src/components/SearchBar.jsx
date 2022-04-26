@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getAlbumsFromArtist } from '../utils/apiHander'
 import AlbumCard from './AlbumCard'
 import '../style/SearchBar.css'
+import { Carousel } from 'react-bootstrap'
 
 
 export default function SearchBar() {
@@ -32,7 +33,12 @@ export default function SearchBar() {
         if (activeSearch) {
             return(
                 searchResults.length > 0 ?
-                    searchResults.map((album,index) =>(<AlbumCard album={album} key={index} />))
+                    <Carousel>
+                        {searchResults.map((album,index) =>(
+                            <Carousel.Item>
+                                <AlbumCard album={album} key={index} />
+                            </Carousel.Item>))}
+                    </Carousel>
                     :
                     <h1> No album found </h1>
                 )

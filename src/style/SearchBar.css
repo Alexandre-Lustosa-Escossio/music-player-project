@@ -2,3 +2,11 @@
     margin: auto;
     margin-top: 20vh;
 }
+
+.carousel{
+    margin-top: 50px;
+}
+
+.card-body{
+    color: black;
+}
