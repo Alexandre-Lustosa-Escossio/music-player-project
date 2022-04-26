@@ -16,7 +16,7 @@ export default function Header() {
     
 
     return (
-        <nav id='teste' className="navbar navbar-dark bg-dark">
+        <nav className="navbar navbar-dark bg-dark">
             <div className="container-fluid">
                 <div className="=navbar-collapse" id="navbarSupportedContent">
                     <Link to='/profile'
