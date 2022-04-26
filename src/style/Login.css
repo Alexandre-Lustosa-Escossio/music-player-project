@@ -11,7 +11,6 @@ main{
 
 }
 
-
 #main{
     background: rgba(0, 0, 0, 0.3);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -33,7 +32,7 @@ hr{
     margin-bottom: 50px;
 }
 
-#form-container{
+#form-inputs-container{
     display: flex;
     flex-direction: column;
     justify-content: center;

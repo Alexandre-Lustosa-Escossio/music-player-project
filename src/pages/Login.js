@@ -31,7 +31,7 @@ export default function Login() {
       <div id='main'>
         <h1 id='heading'>Login</h1>
         <hr/>
-        <div id='form-container'>
+        <div id='form-inputs-container'>
           <div className="mb-3">
             <label htmlFor='name-input' className="form-label">Name</label>
             <input id='name-input'
