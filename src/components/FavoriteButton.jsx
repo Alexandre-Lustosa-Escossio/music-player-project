@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { BsHeart, BsHeartFill } from 'react-icons/bs'
 import AppContext from '../context/AppContext'
 import { getFromLocalStorage, saveOnLocalStorage } from '../utils/localStorageHandler'
+import '../style/FavoriteButton.css'
 
 export default function FavoriteButton({ song }) {
     
@@ -59,8 +60,8 @@ export default function FavoriteButton({ song }) {
     }
 
     return (
-        <div>
-            {isFavorite ? <BsHeartFill onClick={() => handleFavoriteBtnClick()}/> : <BsHeart onClick={() => handleFavoriteBtnClick()}/> }
+        <div id='favorite-button-container'>
+            {isFavorite ? <BsHeartFill size={28} onClick={() => handleFavoriteBtnClick()}/> : <BsHeart size={28} onClick={() => handleFavoriteBtnClick()}/> }
         </div>
   )
 }
